@@ -1,6 +1,5 @@
 public abstract class MobilePhone extends WirelessPhone {
 
-
     private Battery battery;
     private Memory memory;
     private Display display;

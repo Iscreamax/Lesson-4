@@ -1,6 +1,6 @@
 import java.sql.SQLOutput;
 
-public class Main {
+public class Main  {
     public static void main(String[] args) {
 
         Memory memory = new Memory("Profit",256);
@@ -15,6 +15,8 @@ public class Main {
         Message message = new Message("I'm going to be late for work, I'm sorry!");
         Iphone iphone = new Iphone(13,"Pro",memory,batteryIphone,displayIphone,cpuIphone,1350,true);
         Samsung samsung = new Samsung(21,"S",memory,batterySamsung,displaySamsung,cpuSamsung,1270);
+        Imei imeiIphone = new Imei();
+        Imei imeiSamsung = new Imei();
         System.out.println(iphone.toString());
         System.out.println(memory.toString());
         System.out.println(batteryIphone.toString());
@@ -29,28 +31,35 @@ public class Main {
         firstClient.setFirstName("Max ");
         secondClient.setFirstName("Oleg ");
         iphone.makeCall(firstClient,secondClient);
+        //Узнаём Imei Iphone
         //Включаем Iphone
         //Устанавливаем соединение Iphone  со спутник
-        //Устанавливаем интернет соединение Iphone
         //Регистрируем пользователя
+        //Устанавливаем интернет соединение Iphone
+        //Вводим пароль
         //Установка приложение в App store
         //Обновляем Iphone
         //Делаем фото на Iphone
         //Снимаем видео на Iphone
         //Звонок с службу 911 с Iphone
         System.out.println("\n"+"Iphone manipulation"+"\n");
+        imeiIphone.getImei(iphone);
         iphone.turnOnMobile();
         iphone.satelliteConnection();
         iphone.internetConnection();
+
         iphone.registration(firstClient);
         iphone.update();
         iphone.installingApplication();
         iphone.makePhoto();
         iphone.makeVideo();
         iphone.alarmCall();
+
+        //Узнаём Imei Samsung
         //Включаем Samsung
         //Устанавливаем соединение Samsung  со спутник
         //Устанавливаем интернет соединение Samsung
+        //Вводим пароль
         //Регистрируем пользователя
         //Установка приложение в Play Market
         //Обновляем Samsung
@@ -58,6 +67,7 @@ public class Main {
         //Снимаем видео на Samsung
         //Звонок с службу 911 с Samsung
         System.out.println("\n"+"Samsung manipulation "+"\n");
+        imeiSamsung.getImei(samsung);
         samsung.turnOnMobile();
         samsung.satelliteConnection();
         samsung.internetConnection();
@@ -67,6 +77,8 @@ public class Main {
         samsung.makePhoto();
         samsung.makeVideo();
         samsung.alarmCall();
+
+
 
     }
 }
