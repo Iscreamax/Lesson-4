@@ -4,7 +4,15 @@ public abstract class MobilePhone extends WirelessPhone {
     private Memory memory;
     private Display display;
     private Cpu cpu;
+    private String imei;
 
+    public String getImei() {
+        return imei;
+    }
+
+    public void setImei(String imei) {
+        this.imei = imei;
+    }
 
     public MobilePhone(int model, String version, Memory memory, Battery battery, Display display, Cpu cpu, int price) {
         super(model, version, price);

@@ -15,12 +15,12 @@ public class Iphone extends MobilePhone implements IMakePhoto,IMakeVideo,IUpdate
 
     @Override
     public void turnOnMobile() {
-        System.out.println("Iphone enabled");
+        System.out.println("You've turned on your phone"+"\n"+"Iphone enabled");
     }
 
     @Override
     public void registration(Client client) {
-        System.out.println("The user "+client.getFirstName()+" "+client.getSurname() +" is registered via Iphone");
+        System.out.println("The user "+client.getFirstName()+" "+client.getSurname() +" is registered an account via Iphone");
     }
 
     @Override

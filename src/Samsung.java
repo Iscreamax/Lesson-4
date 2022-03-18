@@ -10,12 +10,12 @@ public class Samsung extends MobilePhone implements IInstallingApplication,IUpda
     }
     @Override
     public void turnOnMobile() {
-        System.out.println("Samsung enabled");
+        System.out.println("You've turned on your phone"+"\n"+"Samsung enabled");
     }
 
     @Override
     public void registration(Client client) {
-        System.out.println("The user "+client.getFirstName()+" "+client.getSurname() +" is registered via Samsung");
+        System.out.println("The user "+client.getFirstName()+" "+client.getSurname() +" is registered an account via Samsung");
     }
 
     @Override
