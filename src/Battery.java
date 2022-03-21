@@ -2,7 +2,7 @@ public class Battery {
     private String manufacture;
     private int capacity;
 
-    public Battery(){
+    public Battery() {
 
     }
 
@@ -10,6 +10,7 @@ public class Battery {
         this.manufacture = manufacture;
         this.capacity = capacity;
     }
+
     public String getManufacture() {
         return manufacture;
     }
@@ -28,7 +29,7 @@ public class Battery {
 
     @Override
     public String toString() {
-        return ("\n"+"Battery:"+"\n"+"Manufacture - "+ getManufacture()+"\n"+ "Capacity - "+ getCapacity() );
+        return ("\n" + "Battery:" + "\n" + "Manufacture - " + getManufacture() + "\n" + "Capacity - " + getCapacity());
     }
 
 

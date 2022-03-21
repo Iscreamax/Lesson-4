@@ -6,7 +6,7 @@ public class Memory {
         this.capacity = capacity;
     }
 
-    public Memory(){
+    public Memory() {
 
     }
 
@@ -14,6 +14,7 @@ public class Memory {
         this.manufacture = manufacture;
         this.capacity = capacity;
     }
+
     public String getManufacture() {
         return manufacture;
     }
@@ -32,7 +33,7 @@ public class Memory {
 
     @Override
     public String toString() {
-        return("\n"+ "Memory: "+"\n"+"Manufacture - "+ getManufacture()+"\n"+ "Capacity - "+ getCapacity()+" Gb");
+        return ("\n" + "Memory: " + "\n" + "Manufacture - " + getManufacture() + "\n" + "Capacity - " + getCapacity() + " Gb");
 
     }
 

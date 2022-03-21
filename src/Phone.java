@@ -1,7 +1,11 @@
-public abstract class Phone  {
+import java.util.Objects;
+
+public abstract class Phone {
+
     private int model;
     private String version;
     private int price;
+
 
     public Phone(int model, String version, int price) {
         this.model = model;
@@ -33,14 +37,16 @@ public abstract class Phone  {
         this.price = price;
     }
 
-    public void alarmCall(){
+    public void alarmCall() {
         System.out.println("Hello this is 911");
-}
-    public void makeCall(Client firstClient, Client secondClient){
-        System.out.println(firstClient.getFirstName()+" called " + secondClient.getFirstName()+" on the analog line.");
+    }
 
 
-}
+    public void makeCall(Client firstClient, Client secondClient) {
+        System.out.println(firstClient.getFirstName() + " called " + secondClient.getFirstName() + " on the analog line.");
+
+
+    }
 
 
 }

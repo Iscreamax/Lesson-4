@@ -2,10 +2,11 @@ public class Client {
     private String firstName;
     private String surname;
     private String patronymic;
-   
-    public Client(){
+
+    public Client() {
 
     }
+
     public Client(String firstName, String surname, String patronymic) {
         this.firstName = firstName;
         this.surname = surname;
@@ -16,6 +17,7 @@ public class Client {
         this.firstName = firstName;
         this.surname = surname;
     }
+
     public String getFirstName() {
         return firstName;
     }

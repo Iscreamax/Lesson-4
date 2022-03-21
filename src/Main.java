@@ -13,8 +13,18 @@ public class Main {
         Message message = new Message("I'm going to be late for work, I'm sorry!");
         Iphone iphone = new Iphone(13, "Pro", memory, batteryIphone, displayIphone, cpuIphone, 1350, true);
         Samsung samsung = new Samsung(21, "S", memory, batterySamsung, displaySamsung, cpuSamsung, 1270);
+        Iphone iphoneMini = new Iphone(12, "Mini", memory, batteryIphone, displayIphone, cpuIphone, 1200, false);
+        Landline philips = new Landline("Philips", 2230, "One", 60);
+        Landline lg = new Landline("LG", 007, "Home", 110);
 
-
+        System.out.println("Equals Landline: " + philips.equals(lg));
+        System.out.println("Equals Iphone: " + iphone.equals(iphoneMini));
+        System.out.println("Equals Samsung: " + samsung.equals(iphoneMini));
+        System.out.println("Samsung hashCode: " + samsung.hashCode());
+        System.out.println("Iphone hashCode: " + iphone.hashCode());
+        System.out.println("IphoneMini hashCode: " + iphoneMini.hashCode());
+        System.out.println("Philips hashCode: " + philips.hashCode());
+        System.out.println("LG hashCode: " + lg.hashCode());
         System.out.println(iphone.toString());
         System.out.println(memory.toString());
         System.out.println(batteryIphone.toString());
@@ -42,7 +52,8 @@ public class Main {
         //shooting a video on an Iphone
         //a call to the 911 service from an Iphone
 
-        MobileStore newIphone = new MobileStore(iphone, firstClient);
+        MobileStore newIphone = new MobileStore(iphone);
+        newIphone.buying(iphone, firstClient);
         iphone.turnOnMobile();
         iphone.satelliteConnection();
         iphone.internetConnection();
@@ -66,7 +77,8 @@ public class Main {
         //shooting a video on a Samsung
         //a call to the 911 service from a Samsung
 
-        MobileStore newSamsung = new MobileStore(samsung, secondClient);
+        MobileStore newSamsung = new MobileStore(samsung);
+        newSamsung.buying(samsung, secondClient);
         samsung.turnOnMobile();
         samsung.satelliteConnection();
         samsung.internetConnection();

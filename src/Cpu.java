@@ -2,7 +2,7 @@ public class Cpu {
     private String manufacture;
     private double frequency;
 
-    public Cpu(){
+    public Cpu() {
 
     }
 
@@ -29,9 +29,8 @@ public class Cpu {
 
     @Override
     public String toString() {
-        return ("\n"+"Cpu:"+"\n"+"Manufacture - "+ getManufacture()+"\n"+"Frequency -  "+ getFrequency());
+        return ("\n" + "Cpu:" + "\n" + "Manufacture - " + getManufacture() + "\n" + "Frequency -  " + getFrequency());
     }
-
 
 
 }

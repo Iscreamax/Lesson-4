@@ -3,7 +3,7 @@ public class Display {
     private String types;
     private double inch;
 
-    public Display(){
+    public Display() {
 
     }
 
@@ -39,7 +39,7 @@ public class Display {
 
     @Override
     public String toString() {
-        return ("\n"+"Display:"+"\n"+"Manufacture - "+ getManufacture()+"\n"+"Types - "+ getTypes()+"\n"+"Inch - "+ getInch() );
+        return ("\n" + "Display:" + "\n" + "Manufacture - " + getManufacture() + "\n" + "Types - " + getTypes() + "\n" + "Inch - " + getInch());
     }
 
 

@@ -1,26 +1,28 @@
-public class Iphone extends MobilePhone implements IMakePhoto,IMakeVideo,IUpdate,IInstallingApplication,ISendMessage{
+import java.util.Objects;
+
+public class Iphone extends MobilePhone {
     private boolean waterProof;
 
-    public Iphone(int model, String version, Memory memory, Battery battery, Display display, Cpu cpu, int price,boolean waterProof) {
+    public Iphone(int model, String version, Memory memory, Battery battery, Display display, Cpu cpu, int price, boolean waterProof) {
         super(model, version, memory, battery, display, cpu, price);
         this.waterProof = waterProof;
     }
 
     @Override
     public String toString() {
-        return("Iphone "+ getModel() + "/" + getVersion()+"/"+getMemory().getCapacity()  + "Gb/"
-                + getBattery().getCapacity()+ "mah/"+getDisplay().getInch()+"inh/"+getCpu().getFrequency()+
-                "Ggz/price -"+getPrice() + "$"+" WaterProof - "+ waterProof);
+        return ("Iphone " + getModel() + "/" + getVersion() + "/" + getMemory().getCapacity() + "Gb/"
+                + getBattery().getCapacity() + "mah/" + getDisplay().getInch() + "inh/" + getCpu().getFrequency() +
+                "Ggz/price -" + getPrice() + "$" + " WaterProof - " + waterProof);
     }
 
     @Override
     public void turnOnMobile() {
-        System.out.println("You've turned on your phone"+"\n"+"Iphone enabled");
+        System.out.println("You've turned on your phone" + "\n" + "Iphone enabled");
     }
 
     @Override
     public void registration(Client client) {
-        System.out.println("The user "+client.getFirstName()+" "+client.getSurname() +" is registered an account via Iphone");
+        System.out.println("The user " + client.getFirstName() + " " + client.getSurname() + " is registered an account via Iphone");
     }
 
     @Override
@@ -34,14 +36,14 @@ public class Iphone extends MobilePhone implements IMakePhoto,IMakeVideo,IUpdate
     }
 
     @Override
-    public void sendMessage(Message message,Client firstClient,Client secondClient) {
-        System.out.println("Dear "+ secondClient.getFirstName()+secondClient.getSurname()+secondClient.getPatronymic()+", "+
-                "It's "+ firstClient.getFirstName()+firstClient.getSurname()+firstClient.getPatronymic()+", "+message.getLetterField());
+    public void sendMessage(Message message, Client firstClient, Client secondClient) {
+        System.out.println("Dear " + secondClient.getFirstName() + secondClient.getSurname() + secondClient.getPatronymic() + ", " +
+                "It's " + firstClient.getFirstName() + firstClient.getSurname() + firstClient.getPatronymic() + ", " + message.getLetterField());
     }
 
     @Override
     public void makeVideo() {
-            System.out.println("Shot a video in 4K");
+        System.out.println("Shot a video in 4K");
     }
 
     @Override
@@ -51,7 +53,29 @@ public class Iphone extends MobilePhone implements IMakePhoto,IMakeVideo,IUpdate
 
     @Override
     public void internetConnection() {
-        System.out.println("5G works here");;
+        System.out.println("5G works here");
+        ;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Iphone that = (Iphone) obj;
+        if (getDisplay() != that.getDisplay()) return false;
+        if (getCpu() != that.getCpu()) return false;
+        return Objects.equals(getBattery(), that.getBattery());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getModel() == 0 ? 0 : Objects.hashCode(getModel());
+        result = 31 * result * getPrice();
+        result = 31 * result * getBattery().hashCode();
+        result = 31 * result * getCpu().hashCode();
+        result = 31 * result * getDisplay().hashCode();
+        result = 31 * result * getVersion().hashCode();
+        result = 31 * result * getMemory().hashCode();
+        return result;
+    }
 }

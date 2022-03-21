@@ -1,4 +1,4 @@
-public abstract class MobilePhone extends WirelessPhone {
+public abstract class MobilePhone extends Phone implements IInstallingApplication, IUpdate, IMakePhoto, IMakeVideo, ISendMessage {
 
     private Battery battery;
     private Memory memory;
@@ -16,12 +16,11 @@ public abstract class MobilePhone extends WirelessPhone {
 
     public MobilePhone(int model, String version, Memory memory, Battery battery, Display display, Cpu cpu, int price) {
         super(model, version, price);
-        this.memory= memory;
-        this.battery=battery;
-        this.display=display;
-        this.cpu=cpu;
+        this.memory = memory;
+        this.battery = battery;
+        this.display = display;
+        this.cpu = cpu;
     }
-
 
 
     public Battery getBattery() {
@@ -58,12 +57,17 @@ public abstract class MobilePhone extends WirelessPhone {
 
     @Override
     public void makeCall(Client firstClient, Client secondClient) {
-        System.out.println(firstClient.getFirstName()+" called " + secondClient.getFirstName()+" by 5G.");
+        System.out.println(firstClient.getFirstName() + " called " + secondClient.getFirstName() + " by 5G.");
     }
 
+    public void satelliteConnection() {
+        System.out.println("The connection with the satellite is established!");
+    }
 
     public abstract void turnOnMobile();
+
     public abstract void registration(Client client);
+
     public abstract void internetConnection();
 
 }
